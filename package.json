@@ -1,17 +1,16 @@
 {
   "name": "tools",
-  "type": "module",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-
-    "lint": "npx oxlint ./app",
-    "lint:fix": "npx oxlint ./app --fix",
-    "fmt": "npx oxfmt ./app"
+    "lint": "bun oxlint ./",
+    "lint:fix": "bun oxlint ./ --fix",
+    "fmt": "bun oxfmt ./"
   },
   "dependencies": {
     "bulma": "^1.0.4",
