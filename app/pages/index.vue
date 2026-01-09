@@ -5,7 +5,7 @@
       <hr class="bd-hr" />
       <div class="grid is-col-min-12">
         <div class="cell">
-          <a href="/regex_tester">
+          <a href="./regex_tester">
             <div class="card">
               <div class="card-content">
                 <div class="media">
@@ -36,7 +36,7 @@
           </a>
         </div>
         <div class="cell">
-          <a href="/color_converter">
+          <a href="./color_converter">
             <div class="card">
               <div class="card-content">
                 <div class="media">
