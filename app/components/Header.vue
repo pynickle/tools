@@ -2,10 +2,10 @@
   <!-- Bulma Navbar -->
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="/tools">
+      <NuxtLinkLocale class="navbar-item" to="/">
         <Spool />
-        <h1 class="title is-4">Tools</h1>
-      </a>
+        <h1 class="title is-4">{{ $t('navbar_title') }}</h1>
+      </NuxtLinkLocale>
 
       <a
         role="button"
@@ -22,33 +22,79 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item" href="/"> Home </a>
-        <a class="navbar-item" href="https://github.com/pynickle/tools"> GitHub </a>
+        <a class="navbar-item" href="/"> {{ $t('home') }} </a>
+        <a class="navbar-item" href="https://github.com/pynickle/tools"> {{ $t('github') }} </a>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <!-- Language Switcher -->
+          <div class="dropdown is-right" :class="{ 'is-active': langOpen }">
+            <div class="dropdown-trigger">
+              <button
+                class="button is-small"
+                aria-haspopup="true"
+                aria-controls="lang-menu"
+                @click="langOpen = !langOpen"
+              >
+                <span>{{ currentLocaleName }}</span>
+                <span class="icon is-small">
+                  <ChevronDown />
+                </span>
+              </button>
+            </div>
+
+            <div class="dropdown-menu" id="lang-menu" role="menu">
+              <div class="dropdown-content">
+                <a
+                  v-for="lang in locales"
+                  :key="lang.code"
+                  class="dropdown-item"
+                  :class="{ 'is-active': lang.code === locale }"
+                  @click="changeLang(lang.code)"
+                >
+                  {{ lang.name }}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
 </template>
 
 <script setup lang="ts">
-import { Spool } from 'lucide-vue-next';
-// Navbar burger functionality
-import { onMounted } from 'vue';
+import { Spool, ChevronDown } from 'lucide-vue-next';
+import { onMounted, ref } from 'vue';
+
+// Get i18n instance
+const { locale, setLocale, locales } = useI18n();
+
+const langOpen = ref(false);
+
+type LocaleCode = (typeof locales.value)[number]['code'];
+
+const changeLang = (code: LocaleCode) => {
+  setLocale(code);
+  langOpen.value = false;
+};
+
+const currentLocaleName = computed(() => {
+  return locales.value.find((l) => l.code === locale.value)?.name ?? locale.value;
+});
+
+const onClickOutside = (e: MouseEvent) => {
+  const target = e.target as HTMLElement;
+  if (!target.closest('.dropdown')) {
+    langOpen.value = false;
+  }
+};
 
 onMounted(() => {
-  // Get all "navbar-burger" elements
-  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+  document.addEventListener('click', onClickOutside);
+});
 
-  // Add a click event on each of them
-  $navbarBurgers.forEach((el) => {
-    el.addEventListener('click', () => {
-      // Get the target from the "data-target" attribute
-      const target = el.dataset.target;
-      const $target = document.getElementById(target!);
-
-      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-      el.classList.toggle('is-active');
-      $target?.classList.toggle('is-active');
-    });
-  });
+onBeforeUnmount(() => {
+  document.removeEventListener('click', onClickOutside);
 });
 </script>

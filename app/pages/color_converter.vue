@@ -1,13 +1,13 @@
 <template>
   <div>
     <main>
-      <p class="title is-1 is-spaced">Color Converter</p>
+      <p class="title is-1 is-spaced">{{ $t('color_converter.title') }}</p>
       <hr class="bd-hr" />
       <div class="columns is-multiline">
         <div class="column is-three-fifths-desktop">
           <div class="field is-horizontal">
             <div class="field-label is-normal is-flex-grow-0 has-text-left">
-              <label class="label">Hex</label>
+              <label class="label">{{ $t('color_converter.fields.hex') }}</label>
             </div>
             <div class="field-body">
               <div class="field">
@@ -16,7 +16,7 @@
                     id="hex-input"
                     class="input is-rounded"
                     type="text"
-                    placeholder="Hex"
+                    :placeholder="$t('color_converter.fields.hex')"
                     v-model="hex"
                     @input="onHexInput"
                   />
@@ -32,7 +32,7 @@
           </div>
           <div class="field is-horizontal">
             <div class="field-label is-normal is-flex-grow-0 has-text-left">
-              <label class="label">RGB</label>
+              <label class="label">{{ $t('color_converter.fields.rgb') }}</label>
             </div>
             <div class="field-body">
               <div class="field">
@@ -41,7 +41,7 @@
                     id="rgb-input"
                     class="input is-rounded"
                     type="text"
-                    placeholder="RGB"
+                    :placeholder="$t('color_converter.fields.rgb')"
                     v-model="rgb"
                     @input="onRgbInput"
                   />
@@ -57,7 +57,7 @@
           </div>
           <div class="field is-horizontal">
             <div class="field-label is-normal is-flex-grow-0 has-text-left">
-              <label class="label">HSL</label>
+              <label class="label">{{ $t('color_converter.fields.hsl') }}</label>
             </div>
             <div class="field-body">
               <div class="field">
@@ -66,7 +66,7 @@
                     id="hsl-input"
                     class="input is-rounded"
                     type="text"
-                    placeholder="HSL"
+                    :placeholder="$t('color_converter.fields.hsl')"
                     v-model="hsl"
                     @input="onHslInput"
                   />

@@ -1,0 +1,32 @@
+{
+  "navbar_title": "Tools",
+  "index_title": "Tools For Developer",
+  "home": "Home",
+  "github": "GitHub",
+  "back_to_tools": "Back to Tools",
+  "regex_tester": {
+    "title": "Regex Tester",
+    "description": "Test your regular expressions with sample text.",
+    "fields": {
+      "regex": "Regex",
+      "text": "Text",
+      "flags": "Flags",
+      "results": "Results",
+      "highlighted_text": "Highlighted Text",
+      "no_matches_found": "No matches found",
+      "enter_regex_text": "Enter a regex and test text to see results",
+      "the_regular_expression": "The regular expression you want to test",
+      "text_used_for_testing": "Text used for testing",
+      "found_matches": "Found {count} match | Found {count} matches"
+    }
+  },
+  "color_converter": {
+    "title": "Color Converter",
+    "description": "Convert between different color formats.",
+    "fields": {
+      "hex": "Hex",
+      "rgb": "RGB",
+      "hsl": "HSL"
+    }
+  }
+}

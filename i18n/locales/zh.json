@@ -1,0 +1,32 @@
+{
+  "navbar_title": "工具",
+  "index_title": "开发者工具",
+  "home": "首页",
+  "github": "GitHub",
+  "back_to_tools": "返回工具列表",
+  "regex_tester": {
+    "title": "正则表达式测试器",
+    "description": "使用样本文本测试你的正则表达式。",
+    "fields": {
+      "regex": "正则表达式",
+      "text": "文本",
+      "flags": "标志",
+      "results": "结果",
+      "highlighted_text": "高亮文本",
+      "no_matches_found": "没有找到匹配项",
+      "enter_regex_text": "输入正则表达式和测试文本查看结果",
+      "the_regular_expression": "您要测试的正则表达式",
+      "text_used_for_testing": "用于测试的文本",
+      "found_matches": "找到 {count} 个匹配项:"
+    }
+  },
+  "color_converter": {
+    "title": "颜色转换器",
+    "description": "在不同颜色格式之间转换。",
+    "fields": {
+      "hex": "Hex",
+      "rgb": "RGB",
+      "hsl": "HSL"
+    }
+  }
+}

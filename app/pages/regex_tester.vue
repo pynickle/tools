@@ -1,17 +1,17 @@
 <template>
   <div>
     <main>
-      <p class="title is-1 is-spaced">Regex Tester</p>
+      <p class="title is-1 is-spaced">{{ $t('regex_tester.title') }}</p>
       <hr class="bd-hr" />
       <div class="columns is-multiline">
         <div class="column is-three-fifths-desktop">
           <!-- Regex Input -->
           <div class="field">
-            <label class="label">Regex</label>
+            <label class="label">{{ $t('regex_tester.fields.regex') }}</label>
             <div class="control">
               <textarea
                 class="textarea"
-                placeholder="The regular expression you want to test"
+                :placeholder="$t('regex_tester.fields.the_regular_expression')"
                 v-model="regex"
                 @input="testRegex"
               ></textarea>
@@ -20,7 +20,7 @@
 
           <!-- Regex Flags -->
           <div class="field">
-            <label class="label">Flags</label>
+            <label class="label">{{ $t('regex_tester.fields.flags') }}</label>
             <div class="control">
               <div class="tags has-addons">
                 <span class="tag is-info">Flags:</span>
@@ -38,11 +38,11 @@
 
             <!-- Test Text -->
             <div class="field mt-3">
-              <label class="label">Text</label>
+              <label class="label">{{ $t('regex_tester.fields.text') }}</label>
               <div class="control">
                 <textarea
                   class="textarea"
-                  placeholder="Text used for testing"
+                  :placeholder="$t('regex_tester.fields.text_used_for_testing')"
                   v-model="testText"
                   @input="testRegex"
                 ></textarea>
@@ -53,12 +53,10 @@
           <!-- Match Results -->
           <div class="column is-full">
             <div class="field">
-              <label class="label">Results</label>
+              <label class="label">{{ $t('regex_tester.fields.results') }}</label>
               <div class="box" v-if="matches.length > 0">
                 <p class="is-size-6 has-text-success">
-                  Found <strong>{{ matches.length }}</strong> match{{
-                    matches.length > 1 ? 'es' : ''
-                  }}:
+                  {{ $t('regex_tester.fields.found_matches', { count: matches.length }) }}
                 </p>
                 <ul class="mt-3">
                   <li v-for="(match, index) in matches" :key="index" class="mb-2">
@@ -80,16 +78,20 @@
                 </ul>
               </div>
               <div class="box" v-else-if="regex && testText">
-                <p class="is-size-6 has-text-danger">No matches found</p>
+                <p class="is-size-6 has-text-danger">
+                  {{ $t('regex_tester.fields.no_matches_found') }}
+                </p>
               </div>
               <div class="box" v-else>
-                <p class="is-size-6 has-text-grey">Enter a regex and test text to see results</p>
+                <p class="is-size-6 has-text-grey">
+                  {{ $t('regex_tester.fields.enter_regex_text') }}
+                </p>
               </div>
             </div>
 
             <!-- Highlighted Text -->
             <div class="field" v-if="highlightedText">
-              <label class="label">Highlighted Text</label>
+              <label class="label">{{ $t('regex_tester.fields.highlighted_text') }}</label>
               <div class="box" v-html="highlightedText"></div>
             </div>
           </div>
