@@ -1,0 +1,14 @@
+.bd-hr {
+  background-color: #a0a0a0;
+  border-radius: 99px;
+  height: 0.15rem;
+  width: 4em;
+  margin: 1em auto 1.5em 0;
+}
+
+.copy-icon {
+  cursor: pointer;
+}
+.control.has-icons-right .icon {
+  pointer-events: auto;
+}

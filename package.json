@@ -1,0 +1,25 @@
+{
+  "name": "tools",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+
+    "lint": "npx oxlint ./app",
+    "lint:fix": "npx oxlint ./app --fix",
+    "fmt": "npx oxfmt ./app"
+  },
+  "dependencies": {
+    "bulma": "^1.0.4",
+    "lucide-vue-next": "^0.562.0",
+    "nuxt": "^4.2.2",
+    "oxfmt": "^0.23.0",
+    "oxlint": "^1.38.0",
+    "vue": "^3.5.26",
+    "vue-router": "^4.6.4"
+  }
+}
