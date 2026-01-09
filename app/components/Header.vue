@@ -2,7 +2,7 @@
   <!-- Bulma Navbar -->
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="/">
+      <a class="navbar-item" href="/tools">
         <Spool />
         <h1 class="title is-4">Tools</h1>
       </a>
