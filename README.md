@@ -1,75 +1,62 @@
-# Nuxt Minimal Starter
+# 🛠️ Tools Collection
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A collection of useful tools built with Nuxt.js, supporting multiple common utilities and English/Chinese language switching.
 
-## Setup
+## ✨ Features
 
-Make sure to install dependencies:
+- 🛠️ Multiple practical tools collection
+- 🌐 Internationalization support - English/Chinese switching
+- 📱 Responsive design - Adapted to various device sizes
+- 🚀 Fast loading - Built with Nuxt.js for excellent performance
+- 🔄 Continuous updates - New tools added regularly
+
+## 🛠️ Tech Stack
+
+- **Framework**: Nuxt.js 4
+- **Frontend**: Vue 3
+- **Styling**: Bulma CSS
+- **Icons**: Lucide Vue Next
+- **Internationalization**: @nuxtjs/i18n
+- **Package Manager**: Bun
+- **Code Checking**: OXLint
+- **Code Formatting**: OXFmt
+
+## 📦 Installation
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
 bun install
 ```
 
-## Development Server
+## 🚀 Running
 
-Start the development server on `http://localhost:3000`:
+### Development Server
+
+Start the development server:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
 bun run dev
 ```
 
-## Production
-
-Build the application for production:
+### Build for Production
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
 bun run build
 ```
 
-Locally preview production build:
+### Preview Production Build
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
 bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## 🌍 Internationalization
+
+The project supports both English and Chinese languages, which can be switched in the upper right corner of the page.
+
+## 🤝 Contributing
+
+Welcome to submit Issues and Pull Requests!
+
+## 📄 License
+
+GNU General Public License v3.0 - See the [LICENSE](LICENSE) file for details.
