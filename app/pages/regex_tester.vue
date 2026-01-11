@@ -37,7 +37,7 @@
             </div>
 
             <!-- Test Text -->
-            <div class="field mt-3">
+            <div class="field mt-4">
               <label class="label">{{ $t('regex_tester.fields.text') }}</label>
               <div class="control">
                 <textarea
@@ -51,49 +51,47 @@
           </div>
 
           <!-- Match Results -->
-          <div class="column is-full">
-            <div class="field">
-              <label class="label">{{ $t('regex_tester.fields.results') }}</label>
-              <div class="box" v-if="matches.length > 0">
-                <p class="is-size-6 has-text-success">
-                  {{ $t('regex_tester.fields.found_matches', { count: matches.length }) }}
-                </p>
-                <ul class="mt-3">
-                  <li v-for="(match, index) in matches" :key="index" class="mb-2">
-                    <div class="columns">
-                      <div class="column is-one-fifth">
-                        <span class="tag is-primary">Match {{ index + 1 }}</span>
-                      </div>
-                      <div class="column">
-                        <span class="has-background-warning has-text-black px-1">{{
-                          match.value
-                        }}</span>
-                        <p class="is-size-7 mt-1">
-                          Position: {{ match.index }} -
-                          {{ match.index + match.value.length }}
-                        </p>
-                      </div>
+          <div class="field">
+            <label class="label">{{ $t('regex_tester.fields.results') }}</label>
+            <div class="box" v-if="matches.length > 0">
+              <p class="is-size-6 has-text-success">
+                {{ $t('regex_tester.fields.found_matches', { count: matches.length }) }}
+              </p>
+              <ul class="mt-3">
+                <li v-for="(match, index) in matches" :key="index" class="mb-2">
+                  <div class="columns">
+                    <div class="column is-one-fifth">
+                      <span class="tag is-primary">Match {{ index + 1 }}</span>
                     </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="box" v-else-if="regex && testText">
-                <p class="is-size-6 has-text-danger">
-                  {{ $t('regex_tester.fields.no_matches_found') }}
-                </p>
-              </div>
-              <div class="box" v-else>
-                <p class="is-size-6 has-text-grey">
-                  {{ $t('regex_tester.fields.enter_regex_text') }}
-                </p>
-              </div>
+                    <div class="column">
+                      <span class="has-background-warning has-text-black px-1">{{
+                        match.value
+                      }}</span>
+                      <p class="is-size-7 mt-1">
+                        Position: {{ match.index }} -
+                        {{ match.index + match.value.length }}
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
+            <div class="box" v-else-if="regex && testText">
+              <p class="is-size-6 has-text-danger">
+                {{ $t('regex_tester.fields.no_matches_found') }}
+              </p>
+            </div>
+            <div class="box" v-else>
+              <p class="is-size-6 has-text-grey">
+                {{ $t('regex_tester.fields.enter_regex_text') }}
+              </p>
+            </div>
+          </div>
 
-            <!-- Highlighted Text -->
-            <div class="field" v-if="highlightedText">
-              <label class="label">{{ $t('regex_tester.fields.highlighted_text') }}</label>
-              <div class="box" v-html="highlightedText"></div>
-            </div>
+          <!-- Highlighted Text -->
+          <div class="field" v-if="highlightedText">
+            <label class="label">{{ $t('regex_tester.fields.highlighted_text') }}</label>
+            <div class="box" v-html="highlightedText"></div>
           </div>
         </div>
       </div>
