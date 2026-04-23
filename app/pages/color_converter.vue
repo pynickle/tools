@@ -88,7 +88,6 @@
 
 <script setup lang="ts">
 import { ClipboardCopy } from 'lucide-vue-next';
-
 import { ref } from 'vue';
 
 // Reactive data
